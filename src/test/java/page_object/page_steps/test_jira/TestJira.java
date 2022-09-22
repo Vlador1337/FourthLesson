@@ -15,7 +15,6 @@ public class TestJira extends WebHooks {
     public void start() {
         openUrl(getConfigurationValue(JIRA_URL));
         auth(getConfigurationValue(LOGIN), getConfigurationValue(PASSWORD));
-
     }
 
     @Test
@@ -38,13 +37,14 @@ public class TestJira extends WebHooks {
     }
 
     @Test
-    public void createTaskTest(){
+    public void createTaskTest() {
         createTask();
         Assertions.assertEquals("СДЕЛАТЬ", getStatusTask());
     }
 
     @Test
-    public void changeTaskStatus(){
-        Assertions.assertEquals("ГОТОВО",getChangeStatus());
+    public void changeTaskStatusTest() {
+        changeStatus();
+        Assertions.assertEquals("ГОТОВО", getChangeStatus());
     }
 }
