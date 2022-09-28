@@ -1,18 +1,18 @@
-package hooks;
+package page_object.page_steps;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
 public class WebHooks {
-    @BeforeAll
+    @Before
     public static void setUp() {
         Configuration.startMaximized=true;
 
     }
 
-    @AfterEach
+    @After
     public void driverClose(){
         WebDriverRunner.closeWebDriver();
     }
